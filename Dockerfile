@@ -10,4 +10,9 @@ RUN apk add --update --no-cache curl ca-certificates && \
     apk del curl && \
     rm -f /var/cache/apk/*
 
+ENV HOME=/home
+
+VOLUME home/.cache
+VOLUME home/.config
+
 ENTRYPOINT ["helm"]
